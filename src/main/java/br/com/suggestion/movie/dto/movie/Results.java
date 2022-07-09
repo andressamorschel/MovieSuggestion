@@ -11,9 +11,6 @@ public class Results {
 
     private boolean adult;
 
-    @JsonProperty("backdrop_path")
-    private String backdropPath;
-
     @JsonProperty("genre_ids")
     private List<Integer> genreIds;
 
@@ -27,22 +24,9 @@ public class Results {
 
     private String overview;
 
-    private Float popularity;
-
-    @JsonProperty("poster_path")
-    private String posterPath;
-
     @JsonProperty("release_date")
     private LocalDate releaseDate;
 
     private String title;
-
-    private boolean video;
-
-    @JsonProperty("vote_average")
-    private Float voteAverage;
-
-    @JsonProperty("vote_count")
-    private Long voteCount;
 
 }

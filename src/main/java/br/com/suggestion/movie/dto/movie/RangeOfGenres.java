@@ -3,7 +3,7 @@ package br.com.suggestion.movie.dto.movie;
 import lombok.Data;
 
 @Data
-public class GenreTest {
+public class RangeOfGenres {
 
     private Integer initTemperature;
 

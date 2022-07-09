@@ -25,7 +25,7 @@ public class MovieSuggestionController {
         try {
             return movieSuggestionService.findMoviesByTemperature(country, city);
         } catch (Exception e) {
-            throw new TemperatureNotFoundException("Country or city not found");
+            throw new TemperatureNotFoundException("Error finding location");
         }
     }
 }
