@@ -3,7 +3,7 @@ package br.com.suggestion.movie.dto.temperature;
 import lombok.Data;
 
 @Data
-public class TemperatureRequest {
+public class Temperature {
 
     private Coord coord;
 

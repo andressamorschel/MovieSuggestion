@@ -2,7 +2,8 @@ package br.com.suggestion.movie.controller;
 
 import br.com.suggestion.movie.dto.enumerated.CountryCode;
 import br.com.suggestion.movie.dto.movie.MovieResponse;
-import br.com.suggestion.movie.service.MovieSuggestionService;
+import br.com.suggestion.movie.exception.TemperatureNotFoundException;
+import br.com.suggestion.movie.service.MovieService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,11 +17,15 @@ import java.util.List;
 @RequestMapping("/movies")
 public class MovieSuggestionController {
 
-    private final MovieSuggestionService movieSuggestionService;
+    private final MovieService movieSuggestionService;
 
     @GetMapping("/{country}/{city}")
     public List<MovieResponse> findMoviesByTemperature(@PathVariable CountryCode country,
                                                        @PathVariable String city) {
-        return movieSuggestionService.findMoviesByTemperature(country, city);
+        try {
+            return movieSuggestionService.findMoviesByTemperature(country, city);
+        } catch (Exception e) {
+            throw new TemperatureNotFoundException("Country or city not found");
+        }
     }
 }

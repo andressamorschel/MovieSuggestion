@@ -3,9 +3,15 @@ package br.com.suggestion.movie.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.NOT_FOUND)
-public class TemperatureNotFoundException extends RuntimeException {
-    public TemperatureNotFoundException(String message) {
+import java.io.Serial;
+
+@ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Country or city not found")
+public class TemperatureNotFoundException extends RuntimeException{
+
+    @Serial
+    private static final long serialVersionUID = 1L;
+
+    public TemperatureNotFoundException(String message){
         super(message);
     }
 }

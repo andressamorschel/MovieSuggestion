@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpStatusCodeException;
 
 @Service
 @Slf4j
@@ -22,18 +21,9 @@ public class TemperatureService {
     private final RangeMap<Double, Genres> genreByTemperature;
 
     public Double getTemperature(String locale) {
-        try {
-            var temperature = temperatureFeignClient.getTemperature(locale, appid, UNITS);
-            log.info("temperature {}", temperature);
-            return temperature.getMain().getTemp();
-        } catch (HttpStatusCodeException e) {
-            if (e.getStatusCode().is4xxClientError()) {
-                throw new TemperatureNotFoundException("country or city not found");
-            }
-
-            throw new RuntimeException("error to call temperature api");
-        }
-
+        var temperature = temperatureFeignClient.getTemperature(locale, appid, UNITS);
+        log.info("temperature {}", temperature);
+        return temperature.getMain().getTemp();
     }
 
     public Genres getGenre(Double temperature) {

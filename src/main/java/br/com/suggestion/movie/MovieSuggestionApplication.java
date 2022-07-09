@@ -1,6 +1,5 @@
 package br.com.suggestion.movie;
 
-import br.com.suggestion.movie.service.MovieSuggestionService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
@@ -13,4 +12,10 @@ public class MovieSuggestionApplication {
 		SpringApplication.run(MovieSuggestionApplication.class, args);
 	}
 
+	/*  todo -> documentação
+		todo -> Open API, Swagger
+		todo -> Testes unitários
+		todo -> refactor dtos
+		todo -> sonarQube
+	 */
 }

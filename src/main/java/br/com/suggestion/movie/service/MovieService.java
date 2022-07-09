@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class MovieSuggestionService {
+public class MovieService {
 
     @Value("${access.token}")
     private String accessToken;
@@ -36,6 +36,7 @@ public class MovieSuggestionService {
                         .title(movie.getTitle())
                         .adult(movie.isAdult())
                         .originalLanguage(movie.getOriginalLanguage())
+                        .originalTitle(movie.getOriginalTitle())
                         .overview(movie.getOverview())
                         .releaseDate(movie.getReleaseDate())
                         .build())
