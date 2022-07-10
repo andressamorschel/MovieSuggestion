@@ -35,3 +35,9 @@ $ http://localhost:8080/documentation.html
 <p align="center">
   <img src="./evidencie/example-response.png"  width="85%"/>
 </p>
+
+* Você também pode fazer a requisição diretamente pelo navegador, digitando:
+```bash
+$ http://localhost:8080/movies/{país}/{cidade}
+```
+* Exemplo de requisição pelo navegador:
