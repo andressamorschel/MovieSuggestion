@@ -45,4 +45,4 @@ $ http://localhost:8080/movies/{país}/{cidade}
   <img src="./evidence/response-chrome5.png"  width="80%"/>
 </p>
 
-Você pode conferir a documentação <a href="https://app.swaggerhub.com/apis/ANDRESSAMORSCHEL_1/MovieSuggestionAPI-v1/v1">aqui</a>
+Você pode conferir a documentação <a href="https://app.swaggerhub.com/apis/ANDRESSAMORSCHEL_1/MovieSuggestion-api/v2">aqui</a>
