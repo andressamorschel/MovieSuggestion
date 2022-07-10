@@ -27,8 +27,11 @@ $ http://localhost:8080/documentation.html
 <p align="center">
   <img src="./evidencie/open-api-initial.png"  width="85%"/>
 </p>
+
 * Agora, basta você inserir a localização desejada e clicar em **execute**
+
 * Exemplo de resposta da API:
+
 <p align="center">
   <img src="./evidencie/example-response.png"  width="85%"/>
 </p>
