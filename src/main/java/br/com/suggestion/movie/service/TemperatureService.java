@@ -21,9 +21,14 @@ public class TemperatureService {
     private final RangeMap<Double, Genres> genreByTemperature;
 
     public Double getTemperature(String locale) {
-        var temperature = temperatureFeignClient.getTemperature(locale, appid, UNITS);
-        log.info("temperature {}", temperature);
-        return temperature.getMain().getTemp();
+        try {
+            var temperature = temperatureFeignClient.getTemperature(locale, appid, UNITS);
+            log.info("temperature {}", temperature);
+            return temperature.getMain().getTemp();
+        } catch (Exception e) {
+            throw new TemperatureNotFoundException("Error finding location");
+        }
+
     }
 
     public Genres getGenre(Double temperature) {

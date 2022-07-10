@@ -22,10 +22,6 @@ public class MovieSuggestionController {
     @GetMapping("/{country}/{city}")
     public List<MovieResponse> findMoviesByTemperature(@PathVariable CountryCode country,
                                                        @PathVariable String city) {
-        try {
-            return movieSuggestionService.findMoviesByTemperature(country, city);
-        } catch (Exception e) {
-            throw new TemperatureNotFoundException("Error finding location");
-        }
+        return movieSuggestionService.findMoviesByTemperature(country, city);
     }
 }

@@ -3,6 +3,7 @@ package br.com.suggestion.movie.service;
 import br.com.suggestion.movie.client.TheMovieDbClient;
 import br.com.suggestion.movie.dto.enumerated.CountryCode;
 import br.com.suggestion.movie.dto.movie.MovieResponse;
+import br.com.suggestion.movie.exception.ErrorSearchingMoviesException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,22 +25,28 @@ public class MovieService {
     public List<MovieResponse> findMoviesByTemperature(CountryCode country, String city) {
         var locale = city.concat(",").concat(country.getCode());
         var temperature = temperatureService.getTemperature(locale);
-        var movies = theMovieDbClient.findMoviesInTheaters(accessToken).getResults();
-        var genre = temperatureService.getGenre(temperature);
+        try {
+            var movies = theMovieDbClient.findMoviesInTheaters(accessToken).getResults();
+            var genre = temperatureService.getGenre(temperature);
 
-        return movies.stream()
-                .filter(movie -> movie.getGenreIds()
-                        .stream()
-                        .anyMatch(id -> genre.getId().equals(id)))
-                .map(movie -> MovieResponse.builder()
-                        .id(movie.getId())
-                        .title(movie.getTitle())
-                        .adult(movie.isAdult())
-                        .originalLanguage(movie.getOriginalLanguage())
-                        .originalTitle(movie.getOriginalTitle())
-                        .overview(movie.getOverview())
-                        .releaseDate(movie.getReleaseDate())
-                        .build())
-                .collect(Collectors.toList());
+            return movies.stream()
+                    .filter(movie -> movie.getGenreIds()
+                            .stream()
+                            .anyMatch(id -> genre.getId().equals(id)))
+                    .map(movie -> MovieResponse.builder()
+                            .id(movie.getId())
+                            .title(movie.getTitle())
+                            .adult(movie.isAdult())
+                            .genre(genre.toString())
+                            .originalLanguage(movie.getOriginalLanguage())
+                            .originalTitle(movie.getOriginalTitle())
+                            .overview(movie.getOverview())
+                            .releaseDate(movie.getReleaseDate())
+                            .build())
+                    .collect(Collectors.toList());
+        } catch (Exception e) {
+            throw new ErrorSearchingMoviesException("Error fetching movies from provider");
+        }
+
     }
 }

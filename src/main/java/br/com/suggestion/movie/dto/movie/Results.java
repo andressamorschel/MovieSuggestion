@@ -1,12 +1,14 @@
 package br.com.suggestion.movie.dto.movie;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
 public class Results {
 
     private boolean adult;

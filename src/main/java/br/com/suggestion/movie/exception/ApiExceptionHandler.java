@@ -27,6 +27,21 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
                 status, request);
     }
 
+    @ExceptionHandler(ErrorSearchingMoviesException.class)
+    public ResponseEntity<?> handleErrorSearchingMoviesException(ErrorSearchingMoviesException ex,
+                                                                 WebRequest request){
+        HttpStatus status = HttpStatus.BAD_GATEWAY;
+
+        var apiError = ApiError.builder()
+                .detail(ex.getMessage())
+                .status(status.value())
+                .title(status.getReasonPhrase())
+                .build();
+
+        return handleExceptionInternal(ex, apiError, new HttpHeaders(),
+                status, request);
+    }
+
     @Override
     protected ResponseEntity<Object> handleExceptionInternal(Exception ex, Object body,
                                                              HttpHeaders headers,

@@ -25,5 +25,7 @@ public class MovieResponse {
 
     private boolean adult;
 
+    private String genre;
+
     private LocalDate releaseDate;
 }
