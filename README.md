@@ -42,5 +42,5 @@ $ http://localhost:8080/movies/{país}/{cidade}
 ```
 * Exemplo de requisição pelo navegador:
 <p align="center">
-  <img src="./evidencie/response-chrome5.png"  width="85%"/>
+  <img src="./evidence/response-chrome5.png"  width="85%"/>
 </p>
