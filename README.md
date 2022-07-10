@@ -24,7 +24,11 @@ $ gradle bootrun
 $ http://localhost:8080/documentation.html
 ```
 * Você será direcionado para a interface do Open API, agora, clique no endpoint **GET/movies/{country}/{city}**, e em seguida, **Try it out**
-PRINT TELA
+<p align="center">
+  <img src="./evidencie/open-api-initial.png"  width="85%"/>
+</p>
 * Agora, basta você inserir a localização desejada e clicar em **execute**
 * Exemplo de resposta da API:
-PRINT TELA
+<p align="center">
+  <img src="./evidencie/example-response.png"  width="85%"/>
+</p>
