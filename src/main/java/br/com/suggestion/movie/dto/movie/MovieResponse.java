@@ -21,11 +21,5 @@ public class MovieResponse {
 
     private String overview;
 
-    private String originalLanguage;
-
-    private boolean adult;
-
     private String genre;
-
-    private LocalDate releaseDate;
 }

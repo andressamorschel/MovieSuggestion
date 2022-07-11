@@ -36,12 +36,9 @@ public class MovieService {
                     .map(movie -> MovieResponse.builder()
                             .id(movie.getId())
                             .title(movie.getTitle())
-                            .adult(movie.isAdult())
                             .genre(genre.toString())
-                            .originalLanguage(movie.getOriginalLanguage())
                             .originalTitle(movie.getOriginalTitle())
                             .overview(movie.getOverview())
-                            .releaseDate(movie.getReleaseDate())
                             .build())
                     .collect(Collectors.toList());
         } catch (Exception e) {
