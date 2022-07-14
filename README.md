@@ -23,7 +23,7 @@ $ gradle bootrun
 ```bash
 $ http://localhost:8080/documentation.html
 ```
-* You will be taken to the Open API interface, now click on the endpoint **GET/movies/{country}/{city}**,and then, **Try it out**
+* You will be taken to the Open API interface, now click on the endpoint **GET/movies/{country}/{city}**, and then, **Try it out**
 <p align="center">
   <img src="./evidence/open-api-initial.png"  width="85%"/>
 </p>
