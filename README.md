@@ -1,48 +1,48 @@
-# MovieSuggestion
+# MovieSuggestion API
 
-É uma API desenvolvida com o propósito de recomendar filmes de acordo com a temperatura informada pelo usuário!
+It is an API developed with the purpose of recommending movies according to the temperature informed by the user!
 
-## Pré requisitos pra rodar a aplicação:
+## Prerequisites to run the application:
 - Java v17
 - Gradle v7.4.1
 
-## Passo a passo para rodar a aplicação:
-* Clonar o repositório
+## Step by step to run the application:
+* Clone the repository
 
 ```bash
 $ git clone https://github.com/andressamorschel/MovieSuggestion.git
 ```
 
-- No diretório raiz, rode:
+- In the root directory, run:
 ```bash
 $ gradle bootrun
 ```
 
-## Consumindo a API:
-* Na barra de pesquisa do google, digite:
+## Consuming the API
+* In your browser's search bar, type:
 ```bash
 $ http://localhost:8080/documentation.html
 ```
-* Você será direcionado para a interface do Open API, agora, clique no endpoint **GET/movies/{country}/{city}**, e em seguida, **Try it out**
+* You will be taken to the Open API interface, now click on the endpoint **GET/movies/{country}/{city}**,and then, **Try it out**
 <p align="center">
   <img src="./evidence/open-api-initial.png"  width="85%"/>
 </p>
 
-* Agora, basta você inserir a localização desejada e clicar em **execute**
+* Now, just enter the desired location and click **execute**
 
-* Exemplo de resposta da API:
+* Example API response:
 
 <p align="center">
   <img src="./evidence/example-response.png"  width="85%"/>
 </p>
 
-* Você também pode fazer a requisição diretamente pelo navegador, digitando a uri abaixo e preenchendo os campos entre chaves:
+* You can also make the request directly through the browser, typing the uri below and filling in the fields between curly braces:
 ```bash
-$ http://localhost:8080/movies/{país}/{cidade}
+$ http://localhost:8080/movies/{country}/{city}
 ```
-* Exemplo de requisição pelo navegador:
+* Browser request example:
 <p align="center">
   <img src="./evidence/response-chrome5.png"  width="80%"/>
 </p>
 
-Você pode conferir a documentação <a href="https://app.swaggerhub.com/apis/ANDRESSAMORSCHEL_1/MovieSuggestion-api/v2">aqui</a>
+You can check the documentation <a href="https://app.swaggerhub.com/apis/ANDRESSAMORSCHEL_1/MovieSuggestion-api/v2">here</a>
